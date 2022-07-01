@@ -1,8 +1,8 @@
-import { settingsMobilePayData } from "./interfaces/interfaces";
-import FormMobilePayment from "./styles/components/form/FormMobilePayment";
-import Title from "./styles/components/title/Title";
+import { settingsMobilePayData } from "../src/interfaces/interfaces";
+import FormMobilePayment from "../src/styles/components/form/FormMobilePayment";
+import Title from "../src/styles/components/title/Title";
 import Link from "next/link";
-import LinkOperator from "./styles/components/link/LinkOperator";
+import LinkOperator from "../src/styles/components/link/LinkOperator";
 
 const index: React.FC = () => {
   const operators: Array<settingsMobilePayData> = [

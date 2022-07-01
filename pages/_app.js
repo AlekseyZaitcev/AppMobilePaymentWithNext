@@ -1,5 +1,5 @@
-import Global from "./styles/global/Global";
-import Container from "./styles/global/Container";
+import Global from "../src/styles/global/Global";
+import Container from "../src/styles/global/Container";
 
 export default function MyApp({ Component, pageProps }) {
   return (
