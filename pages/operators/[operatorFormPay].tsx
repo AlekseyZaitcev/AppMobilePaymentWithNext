@@ -10,7 +10,7 @@ import FormButton from "../styles/components/button/FormButton";
 import SuccessMessage from "../styles/message/success/SuccessMessage";
 import Link from "next/link";
 
-export default function () {
+export default function FormPay() {
   const redirect = useRouter();
   const { query } = useRouter();
   const [isDataSended, setIsDataSended] = useState<boolean | undefined>();
