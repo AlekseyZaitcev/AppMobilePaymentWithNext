@@ -7,13 +7,14 @@ import { Formik } from "formik";
 import { Form } from "formik";
 import { ValidationSchemaForAdmin } from "../validationSchemas/ValidationSchemaForAdmin";
 import Error from "../styles/message/error/Error";
+import { Title } from "../styles/components/title/Title";
 
 const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
   addNewOperatorInList,
 }) => {
   return (
     <OperatorPanel>
-      <h2>Панель</h2>
+      <Title>Добавить оператора</Title>
       <Formik
         initialValues={{ name_operator: "" }}
         validateOnBlur

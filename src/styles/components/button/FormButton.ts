@@ -11,4 +11,10 @@ export const FormButton = styled.button`
     color: white;
     background: rgba(51, 48, 48, 1);
   }
+
+  @media (min-width: 2000px) {
+    width: 100%;
+    height: 30%;
+    font-size: 1vw;
+  }
 `;

@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const InputAdminPanel = styled.input`
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 40px;
+  width: 100%;
+  font-size: 1.5vw;
   border: 1px solid #000;
-  margin: 15px 0 15px 0;
   padding-left: 10px;
 
   :hover,
@@ -20,6 +19,10 @@ export const InputAdminPanel = styled.input`
     ::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
+  }
+
+  @media (min-width: 2000px) {
+    font-size: 1.5vw;
   }
 
   @media (max-width: 768px) {

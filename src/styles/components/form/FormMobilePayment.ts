@@ -4,8 +4,7 @@ export const FormMobilePayment = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  min-height: 40%;
+  min-height: 400px;
   border-radius: 30px;
   background: rgba(209, 209, 209, 0.2);
 

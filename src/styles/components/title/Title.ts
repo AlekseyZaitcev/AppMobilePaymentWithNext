@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const Title = styled.h2`
-  font-size: 36px;
-  margin: 30px 0 10px 0;
+  font-size: 2.5vw;
+  padding: 30px;
   font-weight: 700;
-
-  @media (max-width: 768px) {
-    font-size: 23px;
-  }
 `;

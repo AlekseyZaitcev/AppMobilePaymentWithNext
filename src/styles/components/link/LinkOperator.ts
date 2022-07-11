@@ -5,11 +5,10 @@ export const LinkOperator = styled.a`
   align-items: center;
   justify-content: center;
   border: 1px solid #000;
-  border-radius: 10px;
-  margin: 15px 0 20px 0;
-  width: 170px;
-  height: 80px;
-  font-size: 16px;
+  margin: 10% 0 10% 0;
+  width: 100%;
+  padding: 20px;
+  font-size: 2vw;
 
   :hover {
     color: white;

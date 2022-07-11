@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const ButtonForAdminPanel = styled.button`
   border: 1px solid #000;
   background: #fff;
-  width: 200px;
-  height: 40px;
+  width: 100%;
   margin: 15px 0 0 0;
+  padding: 20px;
+  font-size: 1.5vw;
 
   :hover {
     color: white;

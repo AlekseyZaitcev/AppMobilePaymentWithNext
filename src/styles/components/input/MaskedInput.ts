@@ -23,6 +23,11 @@ export const InputForm = styled(MaskedInput)`
     }
   }
 
+  @media (min-width: 2000px) {
+    width: 100%;
+    height: 30%;
+    font-size: 0.5vw;
+
   @media (max-width: 768px) {
     width: 300px;
   }

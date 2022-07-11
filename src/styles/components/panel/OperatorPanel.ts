@@ -7,6 +7,6 @@ export const OperatorPanel = styled.div`
   justify-content: center;
   align-items: center;
   background: rgba(209, 209, 209, 0.2);
-  width: 300px;
+  width: 100%;
   height: 200px;
 `;
