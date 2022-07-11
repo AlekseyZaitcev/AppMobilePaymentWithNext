@@ -27,3 +27,10 @@ export interface ResultSendProps {
     user_id: number;
   };
 }
+
+export interface AddNewOperatorInListProps {
+  addNewOperatorInList: (fc: {
+    id_operator: number;
+    name_operator: string;
+  }) => void;
+}
