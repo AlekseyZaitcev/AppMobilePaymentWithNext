@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const InputAdminPanel = styled.input`
+export const InputAdminPanel = styled.input`
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -23,8 +23,6 @@ const InputAdminPanel = styled.input`
   }
 
   @media (max-width: 768px) {
-    width: 300px;
+    width: 250px;
   }
 `;
-
-export default InputAdminPanel;

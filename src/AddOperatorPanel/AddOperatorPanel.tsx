@@ -1,19 +1,18 @@
 import React from "react";
 import { AddNewOperatorInListProps } from "../interfaces/interfaces";
-import AdminPanel from "../styles/components/panel/AdminPanel";
-import InputAdminPanel from "../styles/components/input/inputAdminPanel";
-import ButtonForAdminPanel from "../styles/components/button/ButtonForAdminPanel";
+import { OperatorPanel } from "../styles/components/panel/OperatorPanel";
+import { InputAdminPanel } from "../styles/components/input/inputAdminPanel";
+import { ButtonForAdminPanel } from "../styles/components/button/ButtonForAdminPanel";
 import { Formik } from "formik";
 import { Form } from "formik";
-import ValidationSchemaForAdmin from "../validationSchemas/ValidationSchemaForAdmin";
-ValidationSchemaForAdmin;
+import { ValidationSchemaForAdmin } from "../validationSchemas/ValidationSchemaForAdmin";
 import Error from "../styles/message/error/Error";
 
-const AdminMode: React.FC<AddNewOperatorInListProps> = ({
+const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
   addNewOperatorInList,
 }) => {
   return (
-    <AdminPanel>
+    <OperatorPanel>
       <h2>Панель</h2>
       <Formik
         initialValues={{ name_operator: "" }}
@@ -56,8 +55,8 @@ const AdminMode: React.FC<AddNewOperatorInListProps> = ({
           </Form>
         )}
       </Formik>
-    </AdminPanel>
+    </OperatorPanel>
   );
 };
 
-export default AdminMode;
+export default AddOperatorPanel;

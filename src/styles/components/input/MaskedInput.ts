@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MaskedInput from "react-input-mask";
 
-const InputForm = styled(MaskedInput)`
+export const InputForm = styled(MaskedInput)`
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -27,5 +27,3 @@ const InputForm = styled(MaskedInput)`
     width: 300px;
   }
 `;
-
-export default InputForm;

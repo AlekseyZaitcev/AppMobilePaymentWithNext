@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LinkOperator = styled.a`
+export const LinkOperator = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,5 +16,3 @@ const LinkOperator = styled.a`
     background: rgba(51, 48, 48, 1);
   }
 `;
-
-export default LinkOperator;

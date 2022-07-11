@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const FormMobilePayment = styled.section`
+export const FormMobilePayment = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
-  min-height: 400px;
+  width: 80%;
+  min-height: 40%;
   border-radius: 30px;
   background: rgba(209, 209, 209, 0.2);
 
@@ -13,5 +13,3 @@ const FormMobilePayment = styled.section`
     margin: 0 5% 0 5%;
   }
 `;
-
-export default FormMobilePayment;

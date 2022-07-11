@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const validationShema = yup.object().shape({
+export const validationShema = yup.object().shape({
   phoneInput: yup
     .number()
     .required("Обязательно для заполнения")
@@ -12,5 +12,3 @@ const validationShema = yup.object().shape({
     .typeError("Некорректная сумма оплаты")
     .required("Обязательно для заполнения"),
 });
-
-export default validationShema;

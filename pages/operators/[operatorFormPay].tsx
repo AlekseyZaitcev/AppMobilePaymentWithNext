@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import FormMobilePayment from "../../src/styles/components/form/FormMobilePayment";
-import Title from "../../src/styles/components/title/Title";
-import validationShema from "../../src/validationSchemas/ValidationSchema";
-import InputForm from "../../src/styles/components/input/MaskedInput";
+import { FormMobilePayment } from "../../src/styles/components/form/FormMobilePayment";
+import { Title } from "../../src/styles/components/title/Title";
+import { validationShema } from "../../src/validationSchemas/ValidationSchema";
+import { InputForm } from "../../src/styles/components/input/MaskedInput";
 import { Formik, Form } from "formik";
 import Error from "../../src/styles/message/error/Error";
-import FormButton from "../../src/styles/components/button/FormButton";
+import { FormButton } from "../../src/styles/components/button/FormButton";
 import SuccessMessage from "../../src/styles/message/success/SuccessMessage";
 import Link from "next/link";
 

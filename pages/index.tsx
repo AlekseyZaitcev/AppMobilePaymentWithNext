@@ -1,14 +1,12 @@
 import { settingsMobilePayData } from "../src/interfaces/interfaces";
-import FormMobilePayment from "../src/styles/components/form/FormMobilePayment";
-import Title from "../src/styles/components/title/Title";
+import { FormMobilePayment } from "../src/styles/components/form/FormMobilePayment";
+import { Title } from "../src/styles/components/title/Title";
 import Link from "next/link";
-import LinkOperator from "../src/styles/components/link/LinkOperator";
+import { LinkOperator } from "../src/styles/components/link/LinkOperator";
 import { useState } from "react";
-import AdminMode from "../src/adminMode/AdminMode";
+import AdminMode from "../src/AddOperatorPanel/AddOperatorPanel";
 
 const index: React.FC = () => {
-  const [adminMod, setAdminMod] = useState<boolean>(true);
-
   const [operatorsForMobileApp, setOperatorsForMobileApp] = useState<
     Array<settingsMobilePayData>
   >([
@@ -36,7 +34,7 @@ const index: React.FC = () => {
           </li>
         ))}
       </ul>
-      {adminMod && <AdminMode addNewOperatorInList={addNewOperatorInList} />}
+      <AdminMode addNewOperatorInList={addNewOperatorInList} />
     </FormMobilePayment>
   );
 };
