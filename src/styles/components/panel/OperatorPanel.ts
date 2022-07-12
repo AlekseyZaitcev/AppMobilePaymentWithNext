@@ -1,18 +1,12 @@
 import styled from "styled-components";
+import { Colors } from "../../color/colors";
 
-export const OperatorPanel = styled.div`
-  margin: 30px 0 30px 0;
-  padding: 100px;
+export const OperatorPanel = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: rgba(209, 209, 209, 0.2);
-  width: 100%;
-  min-height: 400px;
+  margin: 50px 0 0 0;
+  padding: 15px 0 15px 0;
   border-radius: 30px;
-
-  @media (max-width: 768px) {
-    padding: 0;
-  }
+  background ${Colors.GREY}
 `;

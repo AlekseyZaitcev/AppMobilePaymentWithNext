@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 50%;
+  width: 50%;
   margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    width: 70%;
+  }
 `;
 
 export default Container;

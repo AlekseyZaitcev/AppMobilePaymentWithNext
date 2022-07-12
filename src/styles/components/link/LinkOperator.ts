@@ -1,17 +1,23 @@
 import styled from "styled-components";
+import { Colors } from "../../color/colors";
 
 export const LinkOperator = styled.a`
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 1px solid #000;
-  margin: 10% 0 10% 0;
-  width: 100%;
-  padding: 20px;
-  font-size: calc(10px + 16 * (75vw / 1280));
+  align-items: center;
+  margin: 30px 0 30px 0;
+  padding: 15px 5px 15px 5px;
+  font-size: calc(14px + 16 * (100vw / 1280));
+  border: 1px solid ${Colors.BLACK};
+  border-radius: 10px;
+  background: none;
 
   :hover {
-    color: white;
-    background: rgba(51, 48, 48, 1);
+    color: #fff;
+    background: ${Colors.BLACK};
+  }
+
+  @media (max-width: 768px) {
+    margin: 15px 0 15px 0;
   }
 `;

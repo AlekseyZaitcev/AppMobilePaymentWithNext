@@ -51,7 +51,7 @@ const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
               type="submit"
               onClick={() => handleSubmit}
             >
-              Добавить оператора
+              Добавить
             </ButtonForAdminPanel>
           </Form>
         )}

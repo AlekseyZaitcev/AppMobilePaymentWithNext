@@ -1,35 +1,28 @@
 import styled from "styled-components";
+import { Colors } from "../../color/colors";
 
 export const InputAdminPanel = styled.input`
   display: flex;
   flex-direction: column;
-  min-width: 400px;
-  width: 100%;
-  font-size: calc(24px + 16 (100 vw / 1280));
-  border: 1px solid #000;
-  padding: 10px;
+  font-size: calc(16px + 16 * (100vw / 1280));
+  padding-left: 15px;
+  margin: 30px 0 15px 0;
+  border: 2px solid ${Colors.GREY} @media (max-width: 768px) {
+    width: 210px;
+    height: 30px;
+    font-size: 12px;
+  }
 
   :hover,
   :focus {
-    color: black;
+    color: ${Colors.BLACK};
     background: white;
-    border: 2px solid black;
+    border: 2px solid ${Colors.BLACK};
     ::placeholder {
-      color: black;
+      color: ${Colors.BLACK};
     }
     ::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
-  }
-
-  @media (min-width: 2000px) {
-    font-size: 1.5vw;
-  }
-
-  @media (max-width: 900px) {
-    min-width: 170px;
-    width: 100px;
-    height: 50px;
-    font-size: 14px;
   }
 `;
