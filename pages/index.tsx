@@ -23,19 +23,21 @@ const index: React.FC = () => {
   };
 
   return (
-    <FormMobilePayment>
-      <Title>Выберите оператора</Title>
-      <ul>
-        {operatorsForMobileApp.map((item) => (
-          <li key={item.id_operator}>
-            <Link href={`./operators/${item.name_operator}`}>
-              <LinkOperator>{item.name_operator}</LinkOperator>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <>
+      <FormMobilePayment>
+        <Title>Выберите оператора</Title>
+        <ul>
+          {operatorsForMobileApp.map((item) => (
+            <li key={item.id_operator}>
+              <Link href={`./operators/${item.name_operator}`}>
+                <LinkOperator>{item.name_operator}</LinkOperator>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </FormMobilePayment>
       <AdminMode addNewOperatorInList={addNewOperatorInList} />
-    </FormMobilePayment>
+    </>
   );
 };
 

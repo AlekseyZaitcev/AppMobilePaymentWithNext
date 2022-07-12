@@ -8,7 +8,7 @@ export const LinkOperator = styled.a`
   margin: 10% 0 10% 0;
   width: 100%;
   padding: 20px;
-  font-size: 2vw;
+  font-size: calc(10px + 16 * (75vw / 1280));
 
   :hover {
     color: white;

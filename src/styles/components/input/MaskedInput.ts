@@ -4,11 +4,12 @@ import MaskedInput from "react-input-mask";
 export const InputForm = styled(MaskedInput)`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 40px;
+  min-width: 400px;
+  width: 100%;
+  font-size: 24px;
   border: 1px solid #000;
+  padding: 0 10px 0 10px;
   margin: 15px 0 15px 0;
-  padding-left: 10px;
 
   :hover,
   :focus {
@@ -24,11 +25,14 @@ export const InputForm = styled(MaskedInput)`
   }
 
   @media (min-width: 2000px) {
-    width: 100%;
-    height: 30%;
-    font-size: 0.5vw;
+    font-size: 1vw;
+    height: 60px;
+    margin: 30px 0 30px 0;
+  }
 
-  @media (max-width: 768px) {
-    width: 300px;
+  @media (max-width: 900px) {
+    min-width: 80%;
+    height: 30px;
+    font-size: 7.5px;
   }
 `;

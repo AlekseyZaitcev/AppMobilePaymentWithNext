@@ -13,8 +13,12 @@ export const FormButton = styled.button`
   }
 
   @media (min-width: 2000px) {
-    width: 100%;
-    height: 30%;
+    min-width: 450px;
+    min-height: 100px;
     font-size: 1vw;
+  }
+
+  @media (max-width: 768px) {
+    width: 100px;
   }
 `;

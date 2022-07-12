@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const InputAdminPanel = styled.input`
   display: flex;
   flex-direction: column;
+  min-width: 400px;
   width: 100%;
-  font-size: 1.5vw;
+  font-size: calc(24px + 16 (100 vw / 1280));
   border: 1px solid #000;
-  padding-left: 10px;
+  padding: 10px;
 
   :hover,
   :focus {
@@ -25,7 +26,10 @@ export const InputAdminPanel = styled.input`
     font-size: 1.5vw;
   }
 
-  @media (max-width: 768px) {
-    width: 250px;
+  @media (max-width: 900px) {
+    min-width: 170px;
+    width: 100px;
+    height: 50px;
+    font-size: 14px;
   }
 `;
