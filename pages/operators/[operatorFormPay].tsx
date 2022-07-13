@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FormMobilePayment } from "../../src/styles/components/form/FormMobilePayment";
 import { Title } from "../../src/styles/components/title/Title";
 import { validationShema } from "../../src/validationSchemas/ValidationSchema";
