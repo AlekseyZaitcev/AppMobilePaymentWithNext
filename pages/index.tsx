@@ -3,11 +3,11 @@ import { FormMobilePayment } from "../src/styles/components/form/FormMobilePayme
 import { Title } from "../src/styles/components/title/Title";
 import Link from "next/link";
 import { LinkOperator } from "../src/styles/components/link/LinkOperator";
-import { useState } from "react";
+import React, { useState } from "react";
 import AddOperatorPanel from "../src/AddOperatorPanel/AddOperatorPanel";
 
-const index: React.FC = () => {
-  const [operatorsForMobileApp, setOperatorsForMobileApp] = useState<
+const Index: React.FC = () => {
+  const [OperatorsForMobileApp, setOperatorsForMobileApp] = useState<
     Array<settingsMobilePayData>
   >([
     { id_operator: 1, name_operator: "Билайн" },
@@ -19,7 +19,7 @@ const index: React.FC = () => {
     id_operator: number;
     name_operator: string;
   }) => {
-    setOperatorsForMobileApp([...operatorsForMobileApp, newOperator]);
+    setOperatorsForMobileApp([...OperatorsForMobileApp, newOperator]);
   };
 
   return (
@@ -27,7 +27,7 @@ const index: React.FC = () => {
       <FormMobilePayment>
         <Title>Выберите оператора</Title>
         <ul>
-          {operatorsForMobileApp.map((item) => (
+          {OperatorsForMobileApp.map((item) => (
             <li key={item.id_operator}>
               <Link href={`./operators/${item.name_operator}`}>
                 <LinkOperator>{item.name_operator}</LinkOperator>
@@ -41,4 +41,4 @@ const index: React.FC = () => {
   );
 };
 
-export default index;
+export default Index;
