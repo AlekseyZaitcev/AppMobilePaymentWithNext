@@ -4,7 +4,7 @@ import { Title } from "../src/styles/components/title/Title";
 import Link from "next/link";
 import { LinkOperator } from "../src/styles/components/link/LinkOperator";
 import { useState } from "react";
-import AdminMode from "../src/AddOperatorPanel/AddOperatorPanel";
+import AddOperatorPanel from "../src/AddOperatorPanel/AddOperatorPanel";
 
 const index: React.FC = () => {
   const [operatorsForMobileApp, setOperatorsForMobileApp] = useState<
@@ -15,11 +15,11 @@ const index: React.FC = () => {
     { id_operator: 3, name_operator: "Мегафон" },
   ]);
 
-  const addNewOperatorInList = (data: {
+  const addNewOperatorInList = (newOperator: {
     id_operator: number;
     name_operator: string;
   }) => {
-    setOperatorsForMobileApp([...operatorsForMobileApp, data]);
+    setOperatorsForMobileApp([...operatorsForMobileApp, newOperator]);
   };
 
   return (
@@ -36,7 +36,7 @@ const index: React.FC = () => {
           ))}
         </ul>
       </FormMobilePayment>
-      <AdminMode addNewOperatorInList={addNewOperatorInList} />
+      <AddOperatorPanel addNewOperatorInList={addNewOperatorInList} />
     </>
   );
 };

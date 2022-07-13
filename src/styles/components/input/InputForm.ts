@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import MaskedInput from "react-input-mask";
 import { Colors } from "../../color/colors";
 
-export const InputAdminPanel = styled.input`
+export const InputForm = styled(MaskedInput)`
   display: flex;
   flex-direction: column;
   font-size: calc(14px + 16 * (100vw / 1280));
   padding-left: 15px;
-  margin: 30px 0 15px 0;
+  margin: 20px 0 20px 0;
   border: 2px solid ${Colors.GREY};
   transition: 0.3s;
 
@@ -28,5 +29,6 @@ export const InputAdminPanel = styled.input`
     width: 210px;
     height: 30px;
     font-size: 12px;
+    margin: 10px 0 10px 0;
   }
 `;

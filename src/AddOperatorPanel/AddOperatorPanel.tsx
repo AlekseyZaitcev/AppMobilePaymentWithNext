@@ -1,12 +1,12 @@
 import React from "react";
 import { AddNewOperatorInListProps } from "../interfaces/interfaces";
 import { OperatorPanel } from "../styles/components/panel/OperatorPanel";
-import { InputAdminPanel } from "../styles/components/input/inputAdminPanel";
+import { InputAdminPanel } from "../styles/components/input/InputAdminPanel";
 import { ButtonForAdminPanel } from "../styles/components/button/ButtonForAdminPanel";
 import { Formik } from "formik";
 import { Form } from "formik";
 import { ValidationSchemaForAdmin } from "../validationSchemas/ValidationSchemaForAdmin";
-import Error from "../styles/message/error/Error";
+import { Error } from "../styles/message/error/Error";
 import { Title } from "../styles/components/title/Title";
 
 const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({

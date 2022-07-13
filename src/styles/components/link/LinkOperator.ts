@@ -11,8 +11,10 @@ export const LinkOperator = styled.a`
   border: 1px solid ${Colors.BLACK};
   border-radius: 10px;
   background: none;
+  transition: 0.3s;
 
   :hover {
+    transform: scale(1.05);
     color: #fff;
     background: ${Colors.BLACK};
   }

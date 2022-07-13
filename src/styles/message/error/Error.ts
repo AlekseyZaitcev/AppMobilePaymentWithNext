@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Error = styled.p`
+export const Error = styled.p`
   text-align: center;
   margin: 15px 0 15px 0;
   color: #ff0000;
@@ -10,5 +10,3 @@ const Error = styled.p`
     font-size: 11px;
   }
 `;
-
-export default Error;

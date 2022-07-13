@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const ContainerApp = styled.div`
   width: 50%;
   margin: 0 auto;
 
@@ -8,5 +8,3 @@ const Container = styled.div`
     width: 70%;
   }
 `;
-
-export default Container;

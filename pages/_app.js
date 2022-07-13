@@ -1,13 +1,13 @@
 import Global from "../src/styles/global/Global";
-import Container from "../src/styles/global/Container";
+import { ContainerApp } from "../src/styles/global//ContainerApp";
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Global></Global>
-      <Container>
+      <ContainerApp>
         <Component {...pageProps}></Component>
-      </Container>
+      </ContainerApp>
     </>
   );
 }

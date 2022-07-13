@@ -3,14 +3,14 @@ import { useState } from "react";
 import { FormMobilePayment } from "../../src/styles/components/form/FormMobilePayment";
 import { Title } from "../../src/styles/components/title/Title";
 import { validationShema } from "../../src/validationSchemas/ValidationSchema";
-import { InputForm } from "../../src/styles/components/input/MaskedInput";
+import { InputForm } from "../../src/styles/components/input/InputForm";
 import { Formik, Form } from "formik";
-import Error from "../../src/styles/message/error/Error";
+import { Error } from "../../src/styles/message/error/Error";
 import { FormButton } from "../../src/styles/components/button/FormButton";
-import SuccessMessage from "../../src/styles/message/success/SuccessMessage";
+import { SuccessMessage } from "../../src/styles/message/success/SuccessMessage";
 import Link from "next/link";
 
-export default function FormPay() {
+const FormPay: React.FC = () => {
   const redirect = useRouter();
   const { query } = useRouter();
   const [isDataSended, setIsDataSended] = useState<boolean | undefined>();
@@ -61,7 +61,7 @@ export default function FormPay() {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.payInput}
-              placeholder="Введите сумму от 1Р до 1000Р"
+              placeholder="Введите сумму"
             />
             {touched.payInput && errors.payInput && (
               <Error>{errors.payInput}</Error>
@@ -79,12 +79,12 @@ export default function FormPay() {
             {isDataSended === true && (
               <SuccessMessage>Пополнение успешно выполнено!</SuccessMessage>
             )}
-            {isDataSended === false && (
-              <Error>Ошибка отправки данных. Попробуйте ещё раз!</Error>
-            )}
+            {isDataSended === false && <Error>Ошибка отправки данных!</Error>}
           </Form>
         )}
       </Formik>
     </FormMobilePayment>
   );
-}
+};
+
+export default FormPay;
