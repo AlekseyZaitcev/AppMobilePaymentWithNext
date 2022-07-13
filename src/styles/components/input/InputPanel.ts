@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../color/colors";
 
-export const InputAdminPanel = styled.input`
+export const InputPanel = styled.input`
   display: flex;
   flex-direction: column;
   font-size: calc(14px + 16 * (100vw / 1280));

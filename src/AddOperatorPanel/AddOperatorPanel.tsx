@@ -7,7 +7,7 @@ import { Form } from "formik";
 import { ValidationSchemaForAdmin } from "../validationSchemas/ValidationSchemaForAdmin";
 import { Error } from "../styles/message/error/Error";
 import { Title } from "../styles/components/title/Title";
-import { InputAdminPanel } from "../styles/components/input/InputAdminPanel";
+import { InputPanel } from "../styles/components/input/InputPanel";
 
 const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
   addNewOperatorInList,
@@ -37,12 +37,12 @@ const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
           isValid,
         }) => (
           <Form>
-            <InputAdminPanel
+            <InputPanel
               value={values.name_operator}
               onChange={handleChange}
               onBlur={handleBlur}
               name="name_operator"
-            ></InputAdminPanel>
+            />
             {touched.name_operator && errors.name_operator && (
               <Error>{errors.name_operator}</Error>
             )}
