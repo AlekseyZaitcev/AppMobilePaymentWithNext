@@ -26,7 +26,7 @@ export const InputForm = styled(MaskedInput)`
   }
 
   @media (max-width: 768px) {
-    width: 210px;
+    width: 200px;
     height: 30px;
     font-size: 12px;
     margin: 10px 0 10px 0;

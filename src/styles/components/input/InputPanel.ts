@@ -25,7 +25,7 @@ export const InputPanel = styled.input`
   }
 
   @media (max-width: 768px) {
-    width: 210px;
+    width: 200px;
     height: 30px;
     font-size: 12px;
   }
