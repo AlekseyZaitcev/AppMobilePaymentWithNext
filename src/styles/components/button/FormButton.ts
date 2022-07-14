@@ -12,7 +12,7 @@ export const FormButton = styled.button`
 
   :hover {
     transform: scale(1.05);
-    color: #fff;
+    color: ${Colors.WHITE};
     background: ${Colors.BLACK};
   }
 

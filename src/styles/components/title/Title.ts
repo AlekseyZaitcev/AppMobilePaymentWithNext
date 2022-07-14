@@ -10,6 +10,6 @@ export const Title = styled.h2`
   }
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 17px;
   }
 `;

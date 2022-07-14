@@ -9,25 +9,33 @@ import { Error } from "../../src/styles/message/error/Error";
 import { FormButton } from "../../src/styles/components/button/FormButton";
 import { SuccessMessage } from "../../src/styles/message/success/SuccessMessage";
 import Link from "next/link";
+import { QueryStatus } from "../../src/constans/constans";
+import { Loader } from "../../src/styles/components/loader/Loader";
 
 const FormPay: React.FC = () => {
   const redirect = useRouter();
   const { query } = useRouter();
-  const [isDataSended, setIsDataSended] = useState<boolean | undefined>();
+  const [isDataSended, setIsDataSended] = useState<QueryStatus | undefined>();
+
+  const isQueryFulfilled = isDataSended === QueryStatus.FULFILLED;
+  const isQueryRejected = isDataSended === QueryStatus.REJECTED;
+  const isQueryPending = isDataSended === QueryStatus.PENDING;
 
   return (
     <FormMobilePayment>
-      <Title>{query.operatorFormPay}</Title>
       <Formik
         initialValues={{ phoneInput: "", payInput: "" }}
         validateOnBlur
-        onSubmit={(item) => {
-          if (Math.floor(Math.random() * 2)) {
-            setIsDataSended(true);
-            setTimeout(() => redirect.push("/"), 2000);
-          } else {
-            setIsDataSended(false);
-          }
+        onSubmit={() => {
+          setIsDataSended(QueryStatus.PENDING);
+          setTimeout(() => {
+            if (Math.floor(Math.random() * 2)) {
+              setIsDataSended(QueryStatus.FULFILLED);
+              setTimeout(() => redirect.push("/"), 2000);
+            } else {
+              setIsDataSended(QueryStatus.REJECTED);
+            }
+          }, 1000);
         }}
         validationSchema={validationShema}
       >
@@ -39,49 +47,54 @@ const FormPay: React.FC = () => {
           handleBlur,
           handleSubmit,
           isValid,
-        }) => (
-          <Form>
-            <InputForm
-              mask={"+7 \\ 999 999 99 99"}
-              alwaysShowMask={true}
-              type="tel"
-              name="phoneInput"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.phoneInput}
-              placeholder="Введите номер телефона"
-            />
-            {touched.phoneInput && errors.phoneInput && (
-              <Error>{errors.phoneInput}</Error>
-            )}
-            <InputForm
-              mask={""}
-              type="number"
-              name="payInput"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.payInput}
-              placeholder="Введите сумму"
-            />
-            {touched.payInput && errors.payInput && (
-              <Error>{errors.payInput}</Error>
-            )}
-            <FormButton
-              type="submit"
-              disabled={!isValid || isDataSended}
-              onClick={() => handleSubmit}
-            >
-              Отправить
-            </FormButton>
-            <Link href="/">
-              <FormButton>Назад</FormButton>
-            </Link>
-            {isDataSended === true && (
-              <SuccessMessage>Пополнение успешно выполнено!</SuccessMessage>
-            )}
-            {isDataSended === false && <Error>Ошибка отправки данных!</Error>}
-          </Form>
-        )}
+        }) =>
+          !isQueryPending ? (
+            <Form>
+              <Title>{query.operatorFormPay}</Title>
+              <InputForm
+                mask={"+7 \\ 999 999 99 99"}
+                alwaysShowMask={true}
+                type="tel"
+                name="phoneInput"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.phoneInput}
+                placeholder="Введите номер телефона"
+              />
+              {touched.phoneInput && errors.phoneInput && (
+                <Error>{errors.phoneInput}</Error>
+              )}
+              <InputForm
+                mask={""}
+                type="number"
+                name="payInput"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.payInput}
+                placeholder="Введите сумму"
+              />
+              {touched.payInput && errors.payInput && (
+                <Error>{errors.payInput}</Error>
+              )}
+              <FormButton
+                type="submit"
+                disabled={!isValid || isQueryFulfilled}
+                onClick={() => handleSubmit}
+              >
+                Отправить
+              </FormButton>
+              <Link href="/">
+                <FormButton disabled={isQueryFulfilled}>Назад</FormButton>
+              </Link>
+              {isQueryFulfilled && (
+                <SuccessMessage>Пополнение успешно выполнено!</SuccessMessage>
+              )}
+              {isQueryRejected && <Error>Ошибка отправки данных!</Error>}
+            </Form>
+          ) : (
+            <Loader />
+          )
+        }
       </Formik>
     </FormMobilePayment>
   );

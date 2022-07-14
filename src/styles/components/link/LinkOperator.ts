@@ -12,10 +12,11 @@ export const LinkOperator = styled.a`
   border-radius: 10px;
   background: none;
   transition: 0.3s;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.05);
-    color: #fff;
+    color: ${Colors.WHITE};
     background: ${Colors.BLACK};
   }
 

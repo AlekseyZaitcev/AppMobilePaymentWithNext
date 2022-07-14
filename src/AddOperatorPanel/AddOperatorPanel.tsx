@@ -12,19 +12,18 @@ import { InputPanel } from "../styles/components/input/InputPanel";
 const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
   addNewOperatorInList,
 }) => {
+  const createNewOperator = (item: { name_operator: string }) => {
+    const newOperatorData = { ...item, id_operator: Date.now() };
+    addNewOperatorInList(newOperatorData);
+  };
+
   return (
     <OperatorPanel>
       <Title>Добавить оператора</Title>
       <Formik
         initialValues={{ name_operator: "" }}
         validateOnBlur
-        onSubmit={(item) => {
-          const createNewOperator = {
-            id_operator: Date.now(),
-            ...item,
-          };
-          addNewOperatorInList(createNewOperator);
-        }}
+        onSubmit={(item) => createNewOperator(item)}
         validationSchema={ValidationSchemaForAdmin}
       >
         {({
@@ -38,7 +37,7 @@ const AddOperatorPanel: React.FC<AddNewOperatorInListProps> = ({
         }) => (
           <Form>
             <InputPanel
-              value={values.name_operator}
+              value={values.name_operator.trim()}
               onChange={handleChange}
               onBlur={handleBlur}
               name="name_operator"
